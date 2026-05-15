@@ -1,0 +1,105 @@
+---
+import { site } from '@/data/site';
+---
+<section id="top" class="relative overflow-hidden border-b border-line">
+  <div class="grid-bg pointer-events-none absolute inset-0 opacity-60" aria-hidden="true"></div>
+
+  <div class="relative mx-auto max-w-grid-wide px-5 py-24 sm:px-8 sm:py-32 lg:py-40">
+    <div class="flex flex-col items-start gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
+      <div class="max-w-prose-wide">
+        <p class="label mb-6">Available · Remote-only</p>
+
+        <h1 class="h-display text-5xl leading-[1.05] text-ink sm:text-6xl lg:text-7xl">
+          Martin&nbsp;Janus.
+        </h1>
+
+        <p class="mt-5 text-xl leading-snug text-ink/90 sm:text-2xl">
+          Manufacturing-technology specialist.
+        </p>
+
+        <p class="mt-6 max-w-prose-narrow text-base leading-relaxed text-muted sm:text-lg">
+          Ex–Jaguar Land Rover and Volkswagen Slovakia bodyshops. Twelve years across two OEMs —
+          Audi Q7 &amp; Q8, VW Touareg, Land Rover Defender, Discovery. Internal CATIA V5 +
+          3DExperience expert at JLR Nitra, mentored engineers across the bodyshop. Built 10,500
+          lines of solo VBA + C# tooling at JLR that still runs in production today. Now founding
+          <a href={site.quizzolingo} target="_blank" rel="noopener" class="text-ink underline decoration-accent decoration-2 underline-offset-4 hover:text-accent">Quizzolingo</a>
+          — selected as a Hummelnest startup-programme candidate (Austria, Jan–Mar&nbsp;2026),
+          pre-screened by Raiffeisenlandesbank. Remote-only worldwide.
+        </p>
+
+        <div class="mt-9 flex flex-wrap items-center gap-3">
+          <a
+            href={site.cvPath}
+            download
+            class="hover-lift inline-flex h-11 items-center gap-2 rounded-md border border-accent bg-accent px-5 text-sm font-medium text-white hover:bg-accent/90"
+          >
+            Download CV
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+          </a>
+          <a
+            href={`mailto:${site.email}`}
+            class="hover-lift inline-flex h-11 items-center gap-2 rounded-md border border-line bg-surface px-5 text-sm font-medium text-ink hover:border-accent hover:text-accent"
+          >
+            Email me
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </a>
+          <a
+            href={site.quizzolingo}
+            target="_blank"
+            rel="noopener"
+            class="hover-lift inline-flex h-11 items-center gap-2 rounded-md border border-line bg-surface px-5 text-sm font-medium text-ink hover:border-accent hover:text-accent"
+          >
+            Quizzolingo
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 17 17 7"/>
+              <path d="M7 7h10v10"/>
+            </svg>
+          </a>
+        </div>
+
+        <p class="mt-8 font-mono text-xs text-muted">
+          <span class="text-accent">$</span> location: Slovakia &nbsp;·&nbsp; relocating Thailand Q4&nbsp;2026 &nbsp;·&nbsp; invoicing via Estonian&nbsp;OÜ
+        </p>
+      </div>
+
+      <!-- Headshot. Replace /public/headshot.jpg with your file.
+           Falls back gracefully to the MJ monogram if the image is missing
+           or fails to decode (no flash of broken-image icon). -->
+      <div class="relative shrink-0">
+        <div class="relative h-44 w-44 sm:h-52 sm:w-52 lg:h-64 lg:w-64">
+          <div class="absolute inset-0 -rotate-2 rounded-2xl border border-line bg-surface" aria-hidden="true"></div>
+          <div class="absolute inset-0 rotate-1 overflow-hidden rounded-2xl border border-line bg-surface">
+            <img
+              src="/headshot.jpg"
+              alt="Portrait of Martin Janus"
+              width="512"
+              height="512"
+              loading="eager"
+              decoding="async"
+              class="h-full w-full object-cover"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+            />
+            <div
+              class="hidden h-full w-full place-items-center bg-surface"
+              aria-hidden="true"
+              style="display: none;"
+            >
+              <span class="font-display font-mono text-6xl font-bold text-accent">MJ</span>
+            </div>
+          </div>
+          <span class="absolute -bottom-3 -right-3 inline-flex items-center gap-1.5 rounded-full border border-line bg-bg px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider-label text-muted">
+            <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>
+            Hummelnest 2026
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

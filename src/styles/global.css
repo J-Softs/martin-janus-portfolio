@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Design tokens. Dark-mode default, light-mode opt-in via
+   the `light` class on <html>. Currently no UI toggle (brief
+   says skip it), but the variables are ready if Martin ever
+   wants to add a system-preference fallback later.
+   ============================================================ */
+:root {
+  --bg:      #0A0A0F;
+  --surface: #13131A;
+  --ink:     #E8E8F0;
+  --muted:   #8B8BA0;
+  --line:    rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.14);
+  --accent:  #EA580C;
+  --accent-soft: rgba(234, 88, 12, 0.12);
+}
+
+html.light {
+  --bg:      #FAFAFB;
+  --surface: #FFFFFF;
+  --ink:     #0A0A0F;
+  --muted:   #5A5A70;
+  --line:    rgba(0, 0, 0, 0.08);
+  --line-strong: rgba(0, 0, 0, 0.14);
+  --accent:  #EA580C;
+  --accent-soft: rgba(234, 88, 12, 0.10);
+}
+
+html {
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* Subtle engineering-grid background — visible only on the hero,
+   gives the site a quiet schematic feel without being noisy. */
+.grid-bg {
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 56px 56px;
+  background-position: -1px -1px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 40%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 40%, transparent 75%);
+}
+
+/* Hairline section label. Mimics the `// SECTION` pattern in code
+   comments — keeps the engineering-precision tone the brief asks for. */
+.label {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.label::before {
+  content: '// ';
+  color: var(--accent);
+}
+
+/* Thin orange left-accent on project cards. */
+.card-accent {
+  position: relative;
+}
+.card-accent::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--accent);
+  border-radius: 2px 0 0 2px;
+  opacity: 0.7;
+  transition: opacity 200ms ease, width 200ms ease;
+}
+.card-accent:hover::before {
+  opacity: 1;
+  width: 3px;
+}
+
+/* Focus ring for keyboard users — orange, accessible. */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Selection colour matches the accent. */
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Anchor offset so smooth scroll to a section accounts for the
+   sticky nav. (CSS-only, no JS needed.) */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* Smooth, GPU-cheap hover on links/cards. Avoid box-shadow on
+   hover to keep paint cost low. */
+.hover-lift {
+  transition: transform 200ms ease, border-color 200ms ease, background-color 200ms ease;
+}
+.hover-lift:hover {
+  transform: translateY(-2px);
+  border-color: var(--line-strong);
+}
+
+/* Headline tracking + balance for nicer wrapping. */
+.h-display {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+/* Print: hide nav + footer-meta for clean CV-style print. */
+@media print {
+  nav, footer, .no-print { display: none !important; }
+  body { background: white; color: black; }
+}

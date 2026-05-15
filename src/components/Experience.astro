@@ -1,0 +1,33 @@
+---
+import { experience } from '@/data/experience';
+---
+<section id="experience" class="border-b border-line">
+  <div class="mx-auto max-w-grid-wide px-5 py-24 sm:px-8 sm:py-32">
+    <header class="mb-10 max-w-prose-wide">
+      <p class="label mb-4">Experience</p>
+      <h2 class="h-display text-3xl text-ink sm:text-4xl">
+        Twelve years, shop floor up.
+      </h2>
+    </header>
+
+    <ol class="relative max-w-prose-wide border-l border-line">
+      {experience.map((role) => (
+        <li class="relative pb-8 pl-6 last:pb-0">
+          <span
+            class="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full border-2 border-bg bg-accent"
+            aria-hidden="true"
+          ></span>
+          <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+            <div>
+              <h3 class="text-base font-semibold text-ink sm:text-lg">
+                {role.title}
+              </h3>
+              <p class="text-sm text-muted">{role.company}</p>
+            </div>
+            <p class="font-mono text-xs text-muted sm:text-sm">{role.period}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

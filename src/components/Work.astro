@@ -1,0 +1,22 @@
+---
+import { projects } from '@/data/projects';
+import ProjectCard from './ProjectCard.astro';
+---
+<section id="work" class="border-b border-line">
+  <div class="mx-auto max-w-grid-wide px-5 py-24 sm:px-8 sm:py-32">
+    <header class="mb-12 max-w-prose-wide">
+      <p class="label mb-4">Selected work</p>
+      <h2 class="h-display text-3xl text-ink sm:text-4xl lg:text-5xl">
+        Production code, not portfolio code.
+      </h2>
+      <p class="mt-4 max-w-prose-narrow text-base text-muted sm:text-lg">
+        Six projects spanning twelve years on the shop floor, two OEMs, and the founding of a SaaS.
+        Several still run in production today.
+      </p>
+    </header>
+
+    <div class="grid gap-5 sm:gap-6 md:grid-cols-2">
+      {projects.map((p) => <ProjectCard project={p} />)}
+    </div>
+  </div>
+</section>
