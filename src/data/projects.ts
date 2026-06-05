@@ -26,11 +26,11 @@ export const projects: Project[] = [
     tech: ['VBA', 'Excel', 'Conditional formatting', 'Data viz'],
   },
   {
-    title: 'CATIA V5 Naming-Convention Tool',
-    context: 'JLR Slovakia · 2023',
+    title: 'Tooling Designer (CATIA V5)',
+    context: 'JLR Slovakia · 2020–2023 · first C# project, pre-AI, fully solo',
     description:
-      'C# desktop application integrated with CATIA V5 to enforce CAD-database naming standards across the bodyshop repository. Eliminated manual rework and inconsistencies; saved hours per week of design-engineer time.',
-    tech: ['C#', '.NET', 'CATIA V5 API', 'WinForms'],
+      'Windows desktop app that automated tooling-design file naming and assembly generation for JLR Nitra bodyshop engineers. ~6,900 lines of hand-written C# across 19 modules — login, theming, user/app settings, data editor, CATIA V5 hide-show + replace-missing workflows, a 2,700-line assembly-generator engine, and a Cryptolens-backed trial/license system. Talks to CATIA via its COM type libraries (Infrastructure / Knowledgeware / ProductStructure). Self-taught from Microsoft docs and Stack Overflow — obsolete today, archived for reference.',
+    tech: ['C#', '.NET', 'WinForms', 'CATIA V5 COM API', 'Cryptolens'],
   },
   {
     title: 'DB Reporting Automation (Selenium)',
