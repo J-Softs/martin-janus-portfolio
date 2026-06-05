@@ -48,6 +48,13 @@ export const projects: Project[] = [
     link: { label: 'quizzolingo.com', href: 'https://quizzolingo.com' },
   },
   {
+    title: 'Rakkan',
+    context: 'Founder · 2026 – present (building)',
+    description:
+      "Real-time chat for cross-language couples. Persistent per-conversation context — relationship, register, glossary, known people — is injected into every translation, plus back-translation so the sender sees how their message will actually read before it lands. 1:1 WebRTC video with live translated captions (Azure Speech), auto-memory extraction of durable facts (birthdays, names, places — partner-confirmed), Web Push + installable PWA. EN/TH/DE/IT/SK UI. Built from a validated prototype after the founder's partner kept asking for it.",
+    tech: ['Next.js 14', 'ASP.NET Core 8', 'SignalR', 'Azure SQL', 'Azure OpenAI', 'Azure Speech', 'WebRTC', 'Stripe'],
+  },
+  {
     title: 'Ammy Cafe (Pattaya, Thailand)',
     context: "Built for a friend's coffee + smoothie shop · 2025",
     description:
